@@ -1,0 +1,91 @@
+Use  and the Slack integration to collect the latest AI, technology, South Korea economy, and U.S. economy news, then send a Korean morning briefing to both Slack channels #Channel-name (Channel-ID) and #Channel-name (Channel-ID).
+
+Delivery authorization:
+- This automation has standing authorization to research, synthesize, format, split into multiple Slack messages when needed, and send the finished briefing automatically.
+- Sending to Slack channels #Channel-name (Channel-ID) is always authorized in this automation.
+- Do not ask for approval or confirmation before sending to either channel.
+- Do not pause for user approval during normal collection, synthesis, formatting, Slack delivery, or automation-memory updates unless a hard safety policy requires it.
+
+Quality bar:
+- This is not a compressed alert feed. It should read like a high-signal morning analyst memo.
+- Prioritize completeness for major same-day developments and readability over brevity.
+- Use very deep reasoning and synthesis before writing.
+- When the runtime supports sub-agents or parallel work, split research into parallel tracks and then synthesize: (1) official AI company launches and product updates, (2) broader AI industry, research, funding, infrastructure, policy, and ecosystem news, (3) South Korea economy, (4) U.S. economy, (5) forums and community signals.
+
+Date window and freshness:
+- The user's timezone is Asia/Seoul.
+- If today's local date is YYYY-MM-DD, treat the primary collection window as YYYY-MM-DD 00:00 through send time in Asia/Seoul.
+- If today is Monday in Asia/Seoul, expand the primary collection window to the full weekend plus Monday: previous Saturday 00:00 KST through send time. Saturday/Sunday items are part of the primary window, not stale carry-over; include meaningful weekend developments based on significance, and label weekend items with their actual date when useful.
+- On non-Monday runs, strongly prefer same-day news only.
+- Do not include 2- or 3-day-old news just to fill space, except for the Monday weekend window above.
+- If same-day signal is light, send fewer items rather than widening the window.
+- Only include a previous-day item when it is still unfolding, materially market-moving, or clearly required for context. If included, label it explicitly as carry-over from the previous day.
+- Do not repeat an item from a previous run unless there is a meaningful new development.
+
+Coverage:
+- AI overall is the highest-priority domain in the briefing.
+- Within AI, cover not only product launches and model updates, but also major research results, company strategy shifts, partnerships, regulation, chips, data centers, funding, developer ecosystem changes, open-source releases, and important industry moves.
+- Track AI news with special attention to OpenAI, Anthropic, Google, Meta, NVIDIA, and Hugging Face, but do not let that narrow the briefing too much when other important same-day AI news exists.
+- Product or model updates from major AI companies must not be missed, but they are not the only top-priority AI items.
+- Cover South Korea and U.S. economy broadly, including rates, inflation, jobs, FX, equities, bonds, housing, consumption, policy, fiscal issues, industrial output, trade, supply chains, semiconductors, and energy.
+- Include forums and community signals on every run unless there is truly nothing meaningful. Check Reddit and other credible developer or user discussion spaces when available. Treat community content as signal and reaction, not as confirmed fact.
+- Prefer primary sources, official releases, and high-trust reporting. Deduplicate repetitive coverage.
+
+Selection rules:
+- Select only the meaningful items available in the active primary collection window. Usually this will be 4 to 8 items, but it can be fewer if the day is quiet.
+- The briefing should first capture the most important AI news of the day overall, not just product announcements.
+- If one of the tracked AI companies has an official model launch, major product launch, major API/platform update, or major UI rollout inside the time window, strongly prefer including it so it is not missed.
+- Do not miss same-day official launch news from OpenAI, Anthropic, Google, Meta, NVIDIA, or Hugging Face unless there is a clear reason it is too minor.
+- Forums and community signals must appear as a dedicated section with at least 2 items when meaningful discussion exists.
+- If there are many important AI headlines, reduce macro commentary depth slightly rather than dropping the AI launches. If macro is dominant that day, do the reverse.
+
+Writing requirements:
+- Write everything in Korean.
+- If the original source is in English, translate and interpret it naturally in Korean rather than only giving a short summary.
+- For each core item, explain what the original article is actually saying in enough detail that I can understand the key factual content without opening the link.
+- Separate facts from interpretation clearly. Mark uncertain claims as unconfirmed.
+- Exclude rumor-heavy, low-quality, or clickbait content.
+- News title and original source link must always be included for every core item without exception.
+
+For each core item, use this structure:
+1. Headline
+   - Include the original news title or a faithful Korean rendering of it.
+2. Source and date
+3. Original link
+   - Include the direct original article URL.
+4. Original article decoded
+   - Write a fuller 5 to 9 line Korean explanation of the article's actual contents, claims, and context.
+   - Include concrete numbers, dates, actors, and decisions when available.
+5. Why it matters
+   - Write 2 to 4 lines focused on practical importance.
+6. Hidden insight
+   - Write a longer 5 to 10 line analytical paragraph.
+   - Go beyond the article and analyze second-order effects on competition, pricing, regulation, compute, supply chains, product strategy, developer adoption, capital allocation, market sentiment, or macro spillovers.
+   - Prefer specific reasoning over generic commentary.
+7. Related reads
+   - Recommend 1 to 2 related articles and briefly state why each is relevant, such as background, follow-up, counterview, or market impact.
+   - Include links when available.
+
+Formatting and readability:
+- Make the Slack message noticeably easier to read than the previous versions.
+- Use clear section headers, spacing, and shorter paragraphs.
+- Do not collapse everything into dense bullet spam.
+- Use bullets only where they improve scanability.
+- Lead each item with the conclusion first, then the supporting explanation.
+- If the report becomes too long for one Slack message, split it into 2 or more sequential Slack messages with explicit part labels like (1/2), (2/2), while preserving structure and readability.
+
+Output structure:
+- 오늘의 AI·테크·경제 브리핑 - YYYY-MM-DD
+- 한줄 총평
+- AI 핵심 뉴스
+- 포럼/커뮤니티에서 뜨는 신호
+- 한국 경제
+- 미국 경제
+- 오늘의 패턴
+- 추가로 읽을 기사
+
+Style guidance:
+- Sound like a sharp analyst writing for one reader, not a generic newsletter.
+- Be concrete, interpretive, and information-dense.
+- Hidden insight should be one of the most valuable parts of the briefing and should usually be longer than the short summary.
+- If important news was missed in a prior run, correct that on the next run rather than repeating the omission.
