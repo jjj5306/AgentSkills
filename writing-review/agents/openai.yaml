@@ -1,0 +1,4 @@
+interface:
+  display_name: "글 리뷰"
+  short_description: "문서와 스킬의 정합성, 가독성, 정확성 중심 리뷰"
+  default_prompt: "Use $writing-review to review this draft without rewriting it."
