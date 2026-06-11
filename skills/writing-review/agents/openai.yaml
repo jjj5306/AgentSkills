@@ -1,0 +1,4 @@
+interface:
+  display_name: "writing-review"
+  short_description: "Diagnostic review for documents, skills, and workflow prose"
+  default_prompt: "Use $writing-review to review this draft without rewriting it."

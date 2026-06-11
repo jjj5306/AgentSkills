@@ -40,7 +40,7 @@ Use this checklist only when a document is long, important, or difficult to asse
 ## Clarity
 
 - Are actors, responsibilities, and ownership clear?
-- Are "this", "that", "it", "the issue", or "the above" ambiguous?
+- Are references such as "this", "that", "it", "the issue", or "the above" ambiguous?
 - Are conditions and boundaries explicit?
 - Are requested actions stated directly?
 
@@ -65,4 +65,4 @@ Use this checklist only when a document is long, important, or difficult to asse
 - Report only findings that materially improve the document.
 - Group minor issues instead of listing every occurrence.
 - Do not provide rewrite examples unless explicitly requested.
-- Use "확인 필요" for uncertain factual claims instead of guessing.
+- Use a verification-needed section for uncertain factual claims.

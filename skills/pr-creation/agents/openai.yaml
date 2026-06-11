@@ -1,0 +1,4 @@
+interface:
+  display_name: "PR Creation"
+  short_description: "Create PRs after dual review with a specified model"
+  default_prompt: "Use $pr-creation with counterpart model <model> to review my branch and create a PR."
