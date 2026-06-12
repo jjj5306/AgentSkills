@@ -1,0 +1,16 @@
+{
+  "purpose": "Expose animations that Codex rarely triggers in waving/jumping slots.",
+  "changes": {
+    "waiting": "copied from waving, tongue flick",
+    "review": "copied from jumping, handstand"
+  },
+  "preserved": [
+    "idle blink",
+    "running-right/left rolling",
+    "failed"
+  ],
+  "backups": [
+    "C:\\Users\\JHCHO\\Desktop\\벌레티콘\\beolle\\final\\spritesheet.before-visible-remap.webp",
+    "C:\\Users\\JHCHO\\Desktop\\벌레티콘\\beolle\\final\\spritesheet.before-visible-remap.png"
+  ]
+}

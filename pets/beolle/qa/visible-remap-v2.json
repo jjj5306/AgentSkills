@@ -1,0 +1,13 @@
+{
+  "purpose": "Expose tongue flick and handstand in states observed in the app.",
+  "changes": {
+    "waiting": "copied from waving, tongue flick",
+    "review": "copied from jumping, handstand",
+    "running": "combined waving tongue frames and jumping handstand frames"
+  },
+  "preserved": [
+    "idle blink",
+    "running-right/left rolling",
+    "failed"
+  ]
+}
